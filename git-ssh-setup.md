@@ -1,6 +1,6 @@
 # git-ssh-setup
 
-# Git Setup
+## Git Setup
 
   ```bash
   git config --global user.name "USERNAME"
