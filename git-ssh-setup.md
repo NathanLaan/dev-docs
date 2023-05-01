@@ -15,7 +15,7 @@
   ssh-keygen -t ed25519 -C "email@email.com"
   ```
 
-2. On Windows, sometimes the OpenSSH service will be set to disabled or manual. [Start the service](https://stackoverflow.com/questions/65741816/error-connecting-to-agent-no-such-file-or-directory-adding-key-to-ssh-agent).
+2. On Windows, sometimes the OpenSSH service will be set to disabled or manual. [Start the service](https://stackoverflow.com/questions/65741816/error-connecting-to-agent-no-such-file-or-directory-adding-key-to-ssh-agent). Run the following in PowerShell:
 
   ```bash
   Get-Service ssh-agent | Set-Service -StartupType Automatic
@@ -28,16 +28,20 @@
 
   ```bash
   ssh-add id_ed25519
+  ```
+  
+  or:
+  ```bash
   ssh-add c:\Users\USERNAME\.ssh\id_rsa
   ```
 
-4. On Windows, copy the output to the clipboard. Windows PowerShell hasn't implemented > so:
+4. On Windows, copy the output to the clipboard. Windows PowerShell hasn't implemented the > operator, so run the following instead:
 
   ```bash
   Get-Content .\id_ed25519.pub | clip
   ```
 
-5. Paste the contents into the [Github SSH page](https://github.com/settings/ssh/new).
+5. Paste the contents into the [Add new SSH keys page](https://github.com/settings/ssh/new) on GitHub.
 
 # References
 
