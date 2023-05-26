@@ -52,6 +52,13 @@
   IdentityFile ~/.ssh/id_gitlab
   ```
 
+7. Disable firewall Threat Management for the GitLab IP:
+
+  - Go to [Network Security](https://192.168.1.1/network/default/settings/security)
+  - Go to *Threat Management Allow List*.
+  - Add GitLab IP (172.65.251.182).
+  - Set *Direction* to `both`.
+
 # References
 
 - [Connecting to GitHub with SSH: Generating an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
