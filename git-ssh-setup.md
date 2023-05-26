@@ -59,6 +59,14 @@
   - Add GitLab IP (172.65.251.182).
   - Set *Direction* to `both`.
 
+8. **Optional** Setup GitLab to use port 443. Modify the `C:\Users\USERNAME\.ssh\config` file to include:
+
+  ``` bash
+  Hostname altssh.gitlab.com
+  User git
+  Port 443
+  ```
+
 # References
 
 - [Connecting to GitHub with SSH: Generating an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
