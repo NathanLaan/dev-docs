@@ -57,7 +57,7 @@
   - Go to [Network Security](https://192.168.1.1/network/default/settings/security)
   - Go to *Threat Management Allow List*.
   - Add New.
-  - Add GitLab IP (172.65.251.182).
+  - Add GitLab IPs (172.65.251.78 and 172.65.251.182).
   - Set *Direction* to `both`.
   - Save.
   - Add New.
