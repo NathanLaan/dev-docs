@@ -21,7 +21,9 @@
 2. Generate the keys on local workstation. Use `id_github` and `id_gitlab` as the convention for naming the keys.
 
   ```bash
+  cd ~\.ssh
   ssh-keygen -t ed25519 -C "NAME@DOMAIN.com"
+  ssh-keygen -t ed25519 -C "NAME@DOMAIN.com" -f id_gitlab
   ```
 
 3. Add the generated key to the SSH service.
@@ -34,7 +36,7 @@
   or:
   ```bash
   ssh-add c:\Users\USERNAME\.ssh\id_github
-  ssh-add c:\Users\USERNAME\.ssh\id_gitlab
+  ssh-add c:\Users\USERNAME\.ssh\id_gitlab_rsa
   ```
 
 4. On Windows, copy the output to the clipboard. Windows PowerShell hasn't implemented the > operator, so run the following instead:
@@ -75,10 +77,16 @@
 
 8. **Optional** Setup GitLab to use port 443. Modify the `C:\Users\USERNAME\.ssh\config` file to include:
 
-  ``` bash
+  ```bash
   Hostname altssh.gitlab.com
   User git
   Port 443
+  ```
+
+9. Run:
+
+  ```bash
+  ssh -T git@gitlab.com
   ```
 
 # References
