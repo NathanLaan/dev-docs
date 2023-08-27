@@ -12,7 +12,7 @@
 1. Generate the key on local workstation.
 
   ```bash
-  ssh-keygen -t ed25519 -C "email@email.com"
+  ssh-keygen -t ed25519 -C "NAME@DOMAIN.com"
   ```
 
 2. On Windows, sometimes the OpenSSH service will be set to disabled or manual. [Start the service](https://stackoverflow.com/questions/65741816/error-connecting-to-agent-no-such-file-or-directory-adding-key-to-ssh-agent). Run the following in PowerShell:
