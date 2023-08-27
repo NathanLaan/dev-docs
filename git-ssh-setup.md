@@ -22,7 +22,7 @@
 
   ```bash
   cd ~\.ssh
-  ssh-keygen -t ed25519 -C "NAME@DOMAIN.com"
+  ssh-keygen -t ed25519 -C "NAME@DOMAIN.com" -f id_github
   ssh-keygen -t ed25519 -C "NAME@DOMAIN.com" -f id_gitlab
   ```
 
@@ -36,7 +36,7 @@
   or:
   ```bash
   ssh-add c:\Users\USERNAME\.ssh\id_github
-  ssh-add c:\Users\USERNAME\.ssh\id_gitlab_rsa
+  ssh-add c:\Users\USERNAME\.ssh\id_gitlab
   ```
 
 4. On Windows, copy the output to the clipboard. Windows PowerShell hasn't implemented the > operator, so run the following instead:
