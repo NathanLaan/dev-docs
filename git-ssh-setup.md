@@ -39,11 +39,18 @@
   ssh-add c:\Users\USERNAME\.ssh\id_gitlab
   ```
 
-4. On Windows, copy the output to the clipboard. Windows PowerShell hasn't implemented the > operator, so run the following instead:
+4. Copy the output to the clipboard. Windows PowerShell hasn't implemented the > operator, so run the following instead:
 
+  Windows:
   ```bash
   Get-Content .\id_github.pub | clip
   Get-Content .\id_gitlab.pub | clip
+  ```
+
+  Linux:
+  ```bash
+  cat ~/.ssh/id_github.pub
+  cat ~/.ssh/id_gitlab.pub
   ```
 
 5. Paste the contents into the [Add new SSH keys page](https://github.com/settings/ssh/new) on GitHub or the [SSH Keys](https://gitlab.com/-/profile/keys) page on GitLab.
