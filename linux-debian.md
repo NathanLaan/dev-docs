@@ -2,7 +2,7 @@
 
 [Installing Firefox](https://www.linuxcapable.com/how-to-install-firefox-on-debian-linux/)
 
-``` bash
+```bash
 # Ensure APT and APT packages are updated
 $ sudo apt update
 $ sudo apt upgrade
@@ -14,6 +14,6 @@ $ # Validate the key: 35BA A0B3 3E9E B396 F59C A838 C0BA 5CE6 DC63 15A3
 $ gpg --quiet --no-default-keyring --keyring /usr/share/keyrings/packages.mozilla.org.gpg --fingerprint | awk '/pub/{getline; gsub(/^ +| +$/,""); print "\n"$0"\n"}'
 $ echo "deb [signed-by=/usr/share/keyrings/packages.mozilla.org.gpg] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
 # Update APT and install Firefox
-$ sudo apt update
-$ sudo apt install firefox
+$ sudo apt update -y
+$ sudo apt install -y firefox
 ```

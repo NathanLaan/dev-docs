@@ -34,6 +34,7 @@
   ```
   
   or:
+
   ```bash
   ssh-add c:\Users\USERNAME\.ssh\id_github
   ssh-add c:\Users\USERNAME\.ssh\id_gitlab
@@ -42,12 +43,14 @@
 4. Copy the output to the clipboard. Windows PowerShell hasn't implemented the > operator, so run the following instead:
 
   Windows:
+
   ```bash
   Get-Content .\id_github.pub | clip
   Get-Content .\id_gitlab.pub | clip
   ```
 
   Linux:
+  
   ```bash
   cat ~/.ssh/id_github.pub
   cat ~/.ssh/id_gitlab.pub
