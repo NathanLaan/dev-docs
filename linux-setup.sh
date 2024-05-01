@@ -3,7 +3,7 @@ sudo apt update -y
 sudo apt install -y \
   git
 
-# Git setup
+# Git alias setup
 #
 # TODO: Move these to ~/.bash_aliases
 #
@@ -12,6 +12,16 @@ alias g="git"
 alias gcm="git commit -m"
 alias gcam="git commit -a -m"
 EOF
+
+# Load bashrc
+source ~/.bashrc
+
+
+#
+# Git config
+#
+git config --global alias.ci commit
+git config --global alias.st status
 
 # Environment
 gsettings set org.gnome.desktop.interface text-scaling-factor 2.0 
@@ -31,6 +41,9 @@ echo "deb [signed-by=/usr/share/keyrings/packages.mozilla.org.gpg] https://packa
 # Update APT and install Firefox
 sudo apt update -y
 sudo apt install -y firefox
+
+# apostrophe
+sudo apt install -y apostrophe
 
 # bitwarden
 
