@@ -1,7 +1,7 @@
 # CLI
 sudo apt update -y
 sudo apt install -y \
-  git typora
+  git
 
 # Environment
 gsettings set org.gnome.desktop.interface text-scaling-factor 2.0 
