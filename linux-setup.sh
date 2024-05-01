@@ -3,6 +3,16 @@ sudo apt update -y
 sudo apt install -y \
   git
 
+# Git setup
+#
+# TODO: Move these to ~/.bash_aliases
+#
+cat << EOF >> ~/.bashrc
+alias g="git"
+alias gcm="git commit -m"
+alias gcam="git commit -a -m"
+EOF
+
 # Environment
 gsettings set org.gnome.desktop.interface text-scaling-factor 2.0 
 
