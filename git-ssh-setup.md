@@ -66,16 +66,16 @@
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_github
 
-  # GitLab Personal
+  # GitLab PERSONAL_ACCOUNT
   Host gitlab.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_gitlab
   
-  # GitLab 2
+  # GitLab WORKACCOUNT
   Host gitlab.com-WORKACCOUNTNAME
   HostName gitlab.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_gitlab_WORKACCOUNTNAME
+  IdentityFile ~/.ssh/id_gitlab_WORKACCOUNT
   ```
 
 7. Disable firewall Threat Management for GitLab and GitHub:
