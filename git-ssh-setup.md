@@ -80,16 +80,16 @@
 
 7. Disable firewall Threat Management for GitLab and GitHub:
 
-  - Go to [Network Security](https://192.168.1.1/network/default/settings/security)
-  - Go to *Threat Management Allow List* or *Security Detection Allow List*.
-  - Add New.
-  - Add GitLab IPs (172.65.251.78 and 172.65.251.182).
-  - Set *Direction* to `both`.
-  - Save.
-  - Add New.
-  - Add GitHub IP (140.82.114.4).
-  - Set *Direction* to `both`.
-  - Save.
+    - Go to [Network Security](https://192.168.1.1/network/default/settings/security)
+    - Go to *Threat Management Allow List* or *Security Detection Allow List*.
+    - Add New.
+    - Add GitLab IPs (172.65.251.78 and 172.65.251.182).
+    - Set *Direction* to `both`.
+    - Save.
+    - Add New.
+    - Add GitHub IP (140.82.114.4).
+    - Set *Direction* to `both`.
+    - Save.
 
 8. **Optional** If you are working behind a firewall or managed network, you might need to setup GitHub and GitLab to use port 443. Modify the `C:\Users\USERNAME\.ssh\config` or `\.ssh\config` file to include:
 
