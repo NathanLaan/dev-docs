@@ -91,9 +91,12 @@
   - Set *Direction* to `both`.
   - Save.
 
-8. **Optional** Setup GitLab to use port 443. Modify the `C:\Users\USERNAME\.ssh\config` file to include:
+8. **Optional** If you are working behind a firewall or managed network, you might need to setup GitHub and GitLab to use port 443. Modify the `C:\Users\USERNAME\.ssh\config` or `\.ssh\config` file to include:
 
   ```bash
+  Hostname ssh.github.com
+  User GITHUB_USERNAME
+  Port 443
   Hostname altssh.gitlab.com
   User git
   Port 443
