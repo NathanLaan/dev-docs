@@ -11,50 +11,50 @@
 
 1. On Windows, sometimes the OpenSSH service will be set to disabled or manual. [Start the service](https://stackoverflow.com/questions/65741816/error-connecting-to-agent-no-such-file-or-directory-adding-key-to-ssh-agent). Run the following in PowerShell:
 
-  ```shell
-  Get-Service ssh-agent | Set-Service -StartupType Automatic
-  Start-Service ssh-agent
-  Get-Service ssh-agent
-  # This should return a status of Running
-  ```
+```shell
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+Get-Service ssh-agent
+# This should return a status of Running
+```
 
 2. Generate the keys on local workstation. Use `id_github` and `id_gitlab` as the convention for naming the keys.
 
-  ```shell
-  cd ~\.ssh
-  ssh-keygen -t ed25519 -C "NAME@DOMAIN.com" -f id_github
-  ssh-keygen -t ed25519 -C "NAME@DOMAIN.com" -f id_gitlab
-  ```
+```shell
+cd ~\.ssh
+ssh-keygen -t ed25519 -C "NAME@DOMAIN.com" -f id_github
+ssh-keygen -t ed25519 -C "NAME@DOMAIN.com" -f id_gitlab
+```
 
 3. Add the generated key to the SSH service.
 
-  ```shell
-  ssh-add id_github
-  ssh-add id_gitlab
-  ```
+```shell
+ssh-add id_github
+ssh-add id_gitlab
+```
   
-  or:
+or:
 
-  ```shell
-  ssh-add c:\Users\USERNAME\.ssh\id_github
-  ssh-add c:\Users\USERNAME\.ssh\id_gitlab
-  ```
+```shell
+ssh-add c:\Users\USERNAME\.ssh\id_github
+ssh-add c:\Users\USERNAME\.ssh\id_gitlab
+```
 
 4. Copy the output to the clipboard. Windows PowerShell hasn't implemented the > operator, so run the following instead:
 
   Windows:
 
-  ```shell
-  Get-Content .\id_github.pub | clip
-  Get-Content .\id_gitlab.pub | clip
-  ```
+```shell
+Get-Content .\id_github.pub | clip
+Get-Content .\id_gitlab.pub | clip
+```
 
   Linux:
   
-  ```shell
-  cat ~/.ssh/id_github.pub
-  cat ~/.ssh/id_gitlab.pub
-  ```
+```shell
+cat ~/.ssh/id_github.pub
+cat ~/.ssh/id_gitlab.pub
+```
 
 5. Paste the contents into the [Add new SSH keys page](https://github.com/settings/ssh/new) on GitHub or the [SSH Keys](https://gitlab.com/-/profile/keys) page on GitLab.
 
@@ -108,7 +108,7 @@ Port 443
 ssh -T git@gitlab.com
 ```
 
-# Hide your Email Address
+## Hide your Email Address
 
 ```shell
 git config --global user.email "{ID}+{username}@users.noreply.github.com"
@@ -116,7 +116,7 @@ git config --global user.email "{ID}+{username}@users.noreply.github.com"
 
 Get your noreply email address [here on GitHub](https://github.com/settings/emails).
 
-# References
+## References
 
 - [Connecting to GitHub with SSH: Generating an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [Connecting to GitHub with SSH: Adding the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
