@@ -58,4 +58,7 @@ sudo apt install code
 
 # Gnome Extensions
 # dash-to-dock
+#
+# DEBIAN-ONLY
+#
 sudo apt install gnome-shell-extension-dashtodock -y
