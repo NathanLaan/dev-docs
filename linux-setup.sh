@@ -1,7 +1,10 @@
-# CLI
+#
+# Git
+#
 sudo apt update -y
 sudo apt install -y git
 
+#
 # Git alias setup
 #
 # TODO: Move these to ~/.bash_aliases
@@ -15,19 +18,28 @@ EOF
 # Load bashrc
 source ~/.bashrc
 
-
 #
 # Git config
 #
 git config --global alias.ci commit
 git config --global alias.st status
 
-# Environment
-gsettings set org.gnome.desktop.interface text-scaling-factor 2.0 
+#
+# NPM Node Package Manager
+#
+sudo apt install npm
 
-# UI
-# non-LTS firefox
+#
+# Environment
+#
+# text-scaling-factor: 1.5 for laptops, to scale UI components down.
+#
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.5 
+
+#
+# DEBIAN: non-LTS firefox
 # Ensure APT and APT packages are updated
+#
 sudo apt update -y
 sudo apt upgrade -y
 # Install Firefox pre-requisites
@@ -44,7 +56,11 @@ sudo apt install -y firefox
 # apostrophe
 sudo apt install -y apostrophe
 
-# bitwarden
+#
+# Bitwarden Addon
+#
+# TODO: https://askubuntu.com/questions/73474/how-to-install-firefox-addon-from-command-line-in-scripts
+#
 
 # vs-code
 sudo apt-get install wget gpg
