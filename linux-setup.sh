@@ -15,7 +15,9 @@ alias gcm="git commit -m"
 alias gcam="git commit -a -m"
 EOF
 
-# Load bashrc
+#
+# Use SOURCE to load bashrc environment variables
+#
 source ~/.bashrc
 
 #
