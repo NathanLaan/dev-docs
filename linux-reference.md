@@ -106,4 +106,20 @@ sudo apt install -y firefox
   % killall snap-store
   % snap refresh
   ```
-  
+
+## 4. Linux Network Commands
+
+  Ping all IPs in the range:
+
+  -T5 is fast.
+
+  ```bash
+  nmap -T5 -sn x.x.x.x-255
+  nmap -T5 -sn 10.10.10.1-255
+  ```
+
+  Get IP from MAC
+
+  ```bash
+  arp-scap -l grep "00:00:00:00:00:00"
+  ```
