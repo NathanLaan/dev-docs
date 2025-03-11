@@ -9,10 +9,13 @@ sudo apt install -y git
 #
 # TODO: Move these to ~/.bash_aliases
 #
+# cat << EOF >> ~/.bashrc
+# alias g="git"
+# alias gcm="git commit -m"
+# alias gcam="git commit -a -m"
+# EOF
 cat << EOF >> ~/.bashrc
-alias g="git"
 alias gcm="git commit -m"
-alias gcam="git commit -a -m"
 EOF
 
 #
@@ -55,8 +58,15 @@ echo "deb [signed-by=/usr/share/keyrings/packages.mozilla.org.gpg] https://packa
 sudo apt update -y
 sudo apt install -y firefox
 
-# apostrophe
+#
+# Apostrophe Markdown editor
+#
 sudo apt install -y apostrophe
+
+#
+# Kolourpaint image editor
+#
+sudo apt install -y kolourpaint
 
 #
 # Bitwarden Addon
@@ -64,7 +74,9 @@ sudo apt install -y apostrophe
 # TODO: https://askubuntu.com/questions/73474/how-to-install-firefox-addon-from-command-line-in-scripts
 #
 
+#
 # vs-code
+#
 sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
@@ -74,9 +86,15 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code
 
+#
 # Gnome Extensions
 # dash-to-dock
 #
 # DEBIAN-ONLY
 #
-sudo apt install gnome-shell-extension-dashtodock -y
+#sudo apt install gnome-shell-extension-dashtodock -y
+
+#
+# Rust
+#
+$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
