@@ -97,4 +97,12 @@ sudo apt install code
 #
 # Rust
 #
-$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+sudo apt install -y curl
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+#
+# Sanity check for updates
+#
+sudo apt install -y
+sudo apt upgrade -y
+sudo apt autoremove -y
