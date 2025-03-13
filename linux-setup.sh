@@ -101,6 +101,12 @@ sudo apt install -y curl
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
 #
+# AppImage FUSE for JetBrains
+#
+sudo add-apt-repository universe
+sudo apt install libfuse2t64
+
+#
 # Sanity check for updates
 #
 sudo apt install -y
