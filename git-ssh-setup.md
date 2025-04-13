@@ -111,7 +111,10 @@ ssh -T git@gitlab.com
 ## Hide your Email Address
 
 ```shell
-git config --global user.email "{ID}+{username}@users.noreply.github.com"
+#git config --global user.email "{ID}+{username}@users.noreply.github.com"
+git config user.email "722624+NathanLaan@users.noreply.github.com"
+git config --list --local
+
 ```
 
 Get your noreply email address [here on GitHub](https://github.com/settings/emails).
