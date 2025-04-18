@@ -42,6 +42,12 @@ sudo apt install npm
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.5 
 
 #
+# Vitals Gnome Extension: https://extensions.gnome.org/extension/1460/vitals/
+#
+gnome-extensions install vitals@CoreCoding.com
+gnome-extensions enable vitals@CoreCoding.com
+
+#
 # DEBIAN: non-LTS firefox
 # Ensure APT and APT packages are updated
 #
