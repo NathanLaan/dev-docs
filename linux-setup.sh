@@ -42,10 +42,23 @@ sudo apt install npm
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.5 
 
 #
+# Gnome Shell Extensions
+#
+sudo apt install gnome-tweaks
+sudo apt install gnome-shell-extensions
+
+#
 # Vitals Gnome Extension: https://extensions.gnome.org/extension/1460/vitals/
 #
 gnome-extensions install vitals@CoreCoding.com
 gnome-extensions enable vitals@CoreCoding.com
+
+#
+# dash-to-dock
+#
+# DEBIAN-ONLY
+#
+#sudo apt install gnome-shell-extension-dashtodock -y
 
 #
 # DEBIAN: non-LTS firefox
@@ -91,14 +104,6 @@ rm -f packages.microsoft.gpg
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code
-
-#
-# Gnome Extensions
-# dash-to-dock
-#
-# DEBIAN-ONLY
-#
-#sudo apt install gnome-shell-extension-dashtodock -y
 
 #
 # Rust
