@@ -13,9 +13,12 @@ sudo apt install -y git
 # alias g="git"
 # alias gcm="git commit -m"
 # alias gcam="git commit -a -m"
+# alias cf="cargo fmt"
+# alias cb="cargo build"
 # EOF
 cat << EOF >> ~/.bashrc
 alias gcm="git commit -m"
+alias cf="cargo fmt"
 EOF
 
 #
