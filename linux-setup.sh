@@ -121,6 +121,14 @@ sudo add-apt-repository universe
 sudo apt install libfuse2t64
 
 #
+# Razer Thunderbolt Dock
+#
+echo 'deb http://download.opensuse.org/repositories/hardware:/razer/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/hardware:razer.list
+curl -fsSL https://download.opensuse.org/repositories/hardware:razer/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/hardware_razer.gpg > /dev/null
+sudo apt update
+sudo apt install openrazer-meta
+
+#
 # Sanity check for updates
 #
 sudo apt install -y
