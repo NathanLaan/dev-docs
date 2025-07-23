@@ -110,9 +110,13 @@ ssh -T git@gitlab.com
 
 ## Hide your Email Address
 
+Hide your email address, and set your `user.name` on a repo-by-repo basis.
+
 ```shell
-#git config --global user.email "{ID}+{username}@users.noreply.github.com"
+#git config user.email "{ID}+{username}@users.noreply.github.com"
+#git config user.name "{username}"
 git config user.email "722624+NathanLaan@users.noreply.github.com"
+git config user.name "nathanlaan"
 git config --list --local
 
 ```
