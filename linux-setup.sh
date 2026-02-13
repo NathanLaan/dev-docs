@@ -50,11 +50,11 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
 sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions
 
-#
-# Vitals Gnome Extension: https://extensions.gnome.org/extension/1460/vitals/
-#
-gnome-extensions install vitals@CoreCoding.com
-gnome-extensions enable vitals@CoreCoding.com
+# #
+# # Vitals Gnome Extension: https://extensions.gnome.org/extension/1460/vitals/
+# #
+# gnome-extensions install vitals@CoreCoding.com
+# gnome-extensions enable vitals@CoreCoding.com
 
 #
 # dash-to-dock
@@ -63,22 +63,22 @@ gnome-extensions enable vitals@CoreCoding.com
 #
 #sudo apt install gnome-shell-extension-dashtodock -y
 
-#
-# DEBIAN: non-LTS firefox
-# Ensure APT and APT packages are updated
-#
-sudo apt update -y
-sudo apt upgrade -y
-# Install Firefox pre-requisites
-sudo apt install dirmngr ca-certificates software-properties-common apt-transport-https wget -y
-# Get and save the Mozilla signing key
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | gpg --dearmor | sudo tee /usr/share/keyrings/packages.mozilla.org.gpg > /dev/null
-# Validate the key: 35BA A0B3 3E9E B396 F59C A838 C0BA 5CE6 DC63 15A3
-gpg --quiet --no-default-keyring --keyring /usr/share/keyrings/packages.mozilla.org.gpg --fingerprint | awk '/pub/{getline; gsub(/^ +| +$/,""); print "\n"$0"\n"}'
-echo "deb [signed-by=/usr/share/keyrings/packages.mozilla.org.gpg] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-# Update APT and install Firefox
-sudo apt update -y
-sudo apt install -y firefox
+# #
+# # DEBIAN: non-LTS firefox
+# # Ensure APT and APT packages are updated
+# #
+# sudo apt update -y
+# sudo apt upgrade -y
+# # Install Firefox pre-requisites
+# sudo apt install dirmngr ca-certificates software-properties-common apt-transport-https wget -y
+# # Get and save the Mozilla signing key
+# wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | gpg --dearmor | sudo tee /usr/share/keyrings/packages.mozilla.org.gpg > /dev/null
+# # Validate the key: 35BA A0B3 3E9E B396 F59C A838 C0BA 5CE6 DC63 15A3
+# gpg --quiet --no-default-keyring --keyring /usr/share/keyrings/packages.mozilla.org.gpg --fingerprint | awk '/pub/{getline; gsub(/^ +| +$/,""); print "\n"$0"\n"}'
+# echo "deb [signed-by=/usr/share/keyrings/packages.mozilla.org.gpg] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+# # Update APT and install Firefox
+# sudo apt update -y
+# sudo apt install -y firefox
 
 #
 # Apostrophe Markdown editor
@@ -96,17 +96,19 @@ sudo apt install -y kolourpaint
 # TODO: https://askubuntu.com/questions/73474/how-to-install-firefox-addon-from-command-line-in-scripts
 #
 
-#
-# vs-code
-#
-sudo apt-get install wget gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-sudo apt install apt-transport-https
-sudo apt update
-sudo apt install code
+# #
+# # vs-code
+# #
+# # Not working on Debian 13
+# #
+# sudo apt-get install wget gpg
+# wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+# sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+# sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+# rm -f packages.microsoft.gpg
+# sudo apt install apt-transport-https
+# sudo apt update
+# sudo apt install code
 
 #
 # Rust
@@ -114,11 +116,17 @@ sudo apt install code
 sudo apt install -y curl
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
+# #
+# # AppImage FUSE for JetBrains Toolbox app.
+# #
+# sudo add-apt-repository universe
+# sudo apt install libfuse2t64
+
 #
-# AppImage FUSE for JetBrains Toolbox app.
+# Claude Code
 #
-sudo add-apt-repository universe
-sudo apt install libfuse2t64
+curl -fsSL https://claude.ai/install.sh | bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 
 #
 # Sanity check for updates
