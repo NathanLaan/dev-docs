@@ -63,19 +63,27 @@ cat ~/.ssh/id_gitlab.pub
 ```shell
 # GitHub
 Host github.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/id_github
+  HostName github.com
+  User git
+  Port 443
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ssh_laan
 
-# GitLab PERSONAL_ACCOUNT
+# GitLab LAAN  
+Host gitlab-laan    
+  HostName gitlab.com
+  User git
+  Port 443
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ssh_laan
+
+# GitLab COMPANY
 Host gitlab.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/id_gitlab
-
-# GitLab WORKACCOUNT
-Host gitlab.com-WORKACCOUNTNAME
-HostName gitlab.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/id_gitlab_WORKACCOUNT
+  HostName gitlab.com
+  User git
+  Port 443
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ssh_company
 ```
 
 7. Disable firewall Threat Management for GitLab and GitHub:
@@ -94,12 +102,29 @@ IdentityFile ~/.ssh/id_gitlab_WORKACCOUNT
 8. **Optional** If you are working behind a firewall or managed network, you might need to setup GitHub and GitLab to use port 443. Modify the `C:\Users\USERNAME\.ssh\config` or `\.ssh\config` file to include:
 
 ```shell
-Hostname ssh.github.com
-User GITHUB_USERNAME
-Port 443
-Hostname altssh.gitlab.com
-User git
-Port 443
+# GitHub
+Host github.com
+  HostName ssh.github.com
+  User git
+  Port 443
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ssh_laan
+
+# GitLab LAAN  
+Host gitlab-laan    
+  HostName altssh.gitlab.com
+  User git
+  Port 443
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ssh_laan
+
+# GitLab COMPANY
+Host gitlab.com
+  HostName altssh.gitlab.com
+  User git
+  Port 443
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_ssh_company
 ```
 
 9. Run:
@@ -118,6 +143,9 @@ Hide your email address, and set your `user.name` on a repo-by-repo basis.
 git config user.email "722624+NathanLaan@users.noreply.github.com"
 git config user.name "nathanlaan"
 git config --list --local
+git config user.email "nathan@laan.me"
+git config user.name "nathanlaan"
+git config --list --local
 
 ```
 
@@ -127,3 +155,4 @@ Get your noreply email address [here on GitHub](https://github.com/settings/emai
 
 - [Connecting to GitHub with SSH: Generating an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [Connecting to GitHub with SSH: Adding the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+    
