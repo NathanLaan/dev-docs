@@ -123,3 +123,32 @@ sudo apt install -y firefox
   ```bash
   arp-scap -l grep "00:00:00:00:00:00"
   ```
+  
+## Firmware
+  
+```bash
+# Update MetaData from LVFS
+sudo fwupdmgr refresh
+
+# List Available Firmware Updates
+sudo fwupdmgr get-updates
+
+# Apply Updates
+sudo fwupdmgr update           
+
+# List Detected Hardware
+fwupdmgr get-devices
+
+# Show updates. Some updates (UEFI/BIOS) stage on next reboot.
+fwupdmgr get-history 
+```
+
+## Write Image to USB
+
+```bash
+lsblk
+sudo umount /dev/sdX
+sudo dd if=path/to/image.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sync
+sudo eject /dev/sdX
+```

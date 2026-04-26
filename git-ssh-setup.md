@@ -141,12 +141,15 @@ Hide your email address, and set your `user.name` on a repo-by-repo basis.
 #git config user.email "{ID}+{username}@users.noreply.github.com"
 #git config user.name "{username}"
 git config user.email "722624+NathanLaan@users.noreply.github.com"
-git config user.name "nathanlaan"
+git config user.name "laan"
 git config --list --local
 git config user.email "nathan@laan.me"
 git config user.name "nathanlaan"
 git config --list --local
 
+git config user.email "nathan.laan@chemelex.com"
+git config user.name "nlaan"
+git config --list --local
 ```
 
 Get your noreply email address [here on GitHub](https://github.com/settings/emails).
@@ -155,4 +158,26 @@ Get your noreply email address [here on GitHub](https://github.com/settings/emai
 
 - [Connecting to GitHub with SSH: Generating an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [Connecting to GitHub with SSH: Adding the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
-    
+
+## Signing with GPG
+
+```bash
+gpg --full-generate-key
+#
+# If using an anonymous email:
+#
+gpg --edit-key AA91094C5ADCF567
+> adduid
+(enter: NathanLaan, 722624+NathanLaan@users.noreply.github.com)
+> save
+#
+# Export key
+#
+gpg --armor --export your.email@example.com
+#
+# Copy key to GitHub / GitLab
+#
+git config user.signingkey 29446932ED210FABED8B19D0AA91094C5ADCF567
+git config commit.gpgsign true
+git config --list
+```
